@@ -1,0 +1,25 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Modelo passo a passo</title>
+<style>
+body{margin:0;background:#f3efe8;font-family:Arial,Helvetica,sans-serif;color:#0b0b0b;padding:28px}
+h3{font:700 13px/1 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}h3:before{content:'';display:inline-block;width:10px;height:10px;background:#E8500E;margin-right:8px}
+.hint{border-left:3px solid #E8500E;background:#fff;padding:12px 14px;margin:10px 0 16px;font-size:14px;max-width:560px}
+.pst{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:22px;align-items:start;max-width:1180px}
+.pst-l{display:grid;gap:8px}
+.pst-s{all:unset;cursor:pointer;display:grid;grid-template-columns:34px 1fr;gap:12px;padding:14px 14px;background:transparent;border:1px solid transparent}
+.pst-s i{width:30px;height:30px;border-radius:50%;border:1.5px solid #b8b0a4;display:grid;place-items:center;font:700 13px Arial,sans-serif;font-style:normal;color:#6b645a}
+.pst-s b{display:block;font:800 16px/1.2 Arial,sans-serif;color:#6b645a}.pst-s span{display:block;font:500 14px/1.4 Arial,sans-serif;color:#8a8378;margin-top:3px}
+.pst-s.on{background:#0b0b0b;border-color:#E8500E}.pst-s.on i{background:#E8500E;border-color:#E8500E;color:#fff}.pst-s.on b{color:#E8500E}.pst-s.on span{color:#e9e4dc}
+.pst-r figure{margin:0;background:#fff;border:2px solid #0b0b0b}.pst-r img{display:block;width:100%;height:auto}
+.pst-r figcaption{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;font:500 14px Arial,sans-serif;color:#3a342c;border-top:1px solid #e3ddd3}
+.pst-r figcaption button{all:unset;cursor:pointer;font:700 14px Arial,sans-serif;color:#E8500E}
+@media(max-width:760px){.pst{grid-template-columns:1fr}}
+</style></head><body>
+<h3>Achar rápido</h3>
+<div class="hint">↗ <b>Clique em cada passo para ver a tela.</b> No celular, a imagem aparece logo depois da lista. Toque em Ampliar para ver maior.</div>
+<div class="pst"><div class="pst-l">
+<button class="pst-s on" data-i="0"><i>1</i><div><b>Pesquisar</b><span>No topo da tela. Escreva a fala do lead como ele falou, ou o código.</span></div></button>
+<button class="pst-s" data-i="1"><i>2</i><div><b>Escolha o resultado</b><span>A Central mostra as mensagens que batem com a fala. Toque na certa.</span></div></button>
+<button class="pst-s" data-i="2"><i>3</i><div><b>Atalhos do lead</b><span>Na Black, LP, LV, LN, AN e FU abrem a primeira mensagem certa.</span></div></button>
+</div><div class="pst-r"><figure><img id="im" src="d1.jpg"><figcaption><span id="cp">1. Campo de busca no topo</span><button>Ampliar ↗</button></figcaption></figure></div></div>
+<script>var I=['d1.jpg','d2.jpg','d3.jpg'],C=['1. Campo de busca no topo','2. Resultados para "tá caro"','3. Atalhos do lead na Black'];document.querySelectorAll('.pst-s').forEach(b=>b.onclick=()=>{document.querySelectorAll('.pst-s').forEach(x=>x.classList.remove('on'));b.classList.add('on');im.src=I[b.dataset.i];cp.textContent=C[b.dataset.i]})</script>
+</body></html>
